@@ -1,43 +1,112 @@
-<!-- Figure 1 -->
-<div class="figure-card">
-  <h2 class="figure-title">Figure 1: Study design and geographic scope</h2>
-  <img src="fig 1.png" alt="Figure 1: Study design and geographic scope" class="figure-img">
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APHA 2026 Supplement</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      text-align: center;
+      color: #1a365d;
+      margin-bottom: 5px;
+    }
+    .author-info {
+      text-align: center;
+      color: #4a5568;
+      margin-bottom: 25px;
+      font-size: 0.95em;
+    }
+    .figure-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .figure-title {
+      font-size: 1.2em;
+      color: #2b6cb0;
+      margin-top: 0;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #edf2f7;
+      padding-bottom: 8px;
+    }
+    .figure-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .interpretation-box {
+      background-color: #f7fafc;
+      border-left: 4px solid #3182ce;
+      padding: 12px 15px;
+      font-size: 0.9em;
+      color: #2d3748;
+    }
+  </style>
+</head>
+<body>
 
-<!-- Figure 3 Composite -->
-<div class="figure-card">
-  <h2 class="figure-title">Figure 3</h2>
-  <img src="fig 3.png" alt="Figure 3: Spatial mobility network archetypes and Rt trajectories" class="figure-img">
-  <div class="interpretation-box">
-    <strong>Figure 3 Interpretation:</strong><br>
-    <strong>(3A) Spatial Mobility Network Archetypes:</strong> Conceptual taxonomy categorizing metropolitan mobility structures into three archetypes: <em>Type I (Transit-Radial Multi-Hub)</em>, where transit-corridor mixing creates cross-CBG exposure uncaptured by M1; <em>Type II (Hub-and-Spoke Mixed Density)</em>, where core mixing and suburban return flows drive asymmetric exposure modeled explicitly by M2; and <em>Type III (Car-Dependent Dispersed)</em>, where uniform vehicle flows cause M2's spatial force-of-infection to collapse toward M1's homogeneous mixing assumption.<br><br>
-    <strong>(3B) Weekly $R_t$ Trajectories Across Archetypes (2022–2026):</strong> Comparison of weekly reproduction numbers ($R_t$) between M1 (solid) and M2 (dashed) with 95% ensemble credible bands across four post-COVID seasons in four geographically diverse metros (Chicago, Las Vegas, Nashville, Lubbock). Model divergence peaks in transit-heavy (Type I) and centralized commuter (Type II) networks, but converges in dispersed car-dependent systems (Type III).
+  <h1>Supplement to APHA 2026 Poster</h1>
+  <div class="author-info">
+    <strong>Benjamin A. Cristol</strong><br>
+    UTHealth Houston School of Public Health
   </div>
-</div>
 
-<!-- Figure 4A -->
-<div class="figure-card">
-  <h2 class="figure-title">Figure 4A: Peak $R_t$ Disparity by Spatial Network Archetypes</h2>
-  <img src="fig 4a.png" alt="Figure 4A" class="figure-img">
-  <div class="interpretation-box">
-    <strong>Figure 4A Interpretation:</strong> Peak transmission disparity ($\Delta R_t$) between mobility-informed (M2) and unadjusted (M1) models across 25 US metropolitan statistical areas. Spatial network archetypes demonstrate significant variation in divergence.
+  <!-- Figure 1 -->
+  <div class="figure-card">
+    <h2 class="figure-title">Figure 1: Study design and geographic scope</h2>
+    <img src="fig 1.png" alt="Figure 1: Study design and geographic scope" class="figure-img">
   </div>
-</div>
 
-<!-- Figure 4B -->
-<div class="figure-card">
-  <h2 class="figure-title">Figure 4B: Wilcoxon Signed-Rank MAE Comparisons</h2>
-  <img src="fig 4b.png" alt="Figure 4B" class="figure-img">
-  <div class="interpretation-box">
-    <strong>Figure 4B Interpretation:</strong> Paired Mean Absolute Error (MAE) differences across 25 metros evaluated using Wilcoxon signed-rank tests across four post-COVID seasons. Negative values indicate superior precision in M2.
+  <!-- Figure 3 Composite -->
+  <div class="figure-card">
+    <h2 class="figure-title">Figure 3</h2>
+    <img src="fig 3.png" alt="Figure 3: Spatial mobility network archetypes and Rt trajectories" class="figure-img">
+    <div class="interpretation-box">
+      <strong>Figure 3 Interpretation:</strong><br>
+      <strong>(3A) Spatial Mobility Network Archetypes:</strong> Conceptual taxonomy categorizing metropolitan mobility structures into three archetypes: <em>Type I (Transit-Radial Multi-Hub)</em>, where transit-corridor mixing creates cross-CBG exposure uncaptured by M1; <em>Type II (Hub-and-Spoke Mixed Density)</em>, where core mixing and suburban return flows drive asymmetric exposure modeled explicitly by M2; and <em>Type III (Car-Dependent Dispersed)</em>, where uniform vehicle flows cause M2's spatial force-of-infection to collapse toward M1's homogeneous mixing assumption.<br><br>
+      <strong>(3B) Weekly $R_t$ Trajectories Across Archetypes (2022–2026):</strong> Comparison of weekly reproduction numbers ($R_t$) between M1 (solid) and M2 (dashed) with 95% ensemble credible bands across four post-COVID seasons in four geographically diverse metros (Chicago, Las Vegas, Nashville, Lubbock). Model divergence peaks in transit-heavy (Type I) and centralized commuter (Type II) networks, but converges in dispersed car-dependent systems (Type III).
+    </div>
   </div>
-</div>
 
-<!-- Figure 4C -->
-<div class="figure-card">
-  <h2 class="figure-title">Figure 4C: Weighted Interval Score (WIS) Retrospective Forecasting</h2>
-  <img src="fig 4c.png" alt="Figure 4C" class="figure-img">
-  <div class="interpretation-box">
-    <strong>Figure 4C Interpretation:</strong> Weighted Interval Score (WIS) computed over the 2025–26 held-out forecasting window (MMWR weeks 21–34) displayed on a log scale. Lower scores indicate more precise forecasts. Green segments highlight metros where M2 outperformed M1 (18/25).
+  <!-- Figure 4A -->
+  <div class="figure-card">
+    <h2 class="figure-title">Figure 4A: Peak $R_t$ Disparity by Spatial Network Archetypes</h2>
+    <img src="fig 4a.png" alt="Figure 4A" class="figure-img">
+    <div class="interpretation-box">
+      <strong>Figure 4A Interpretation:</strong> Peak transmission disparity ($\Delta R_t$) between mobility-informed (M2) and unadjusted (M1) models across 25 US metropolitan statistical areas. Spatial network archetypes demonstrate significant variation in divergence.
+    </div>
   </div>
-</div>
+
+  <!-- Figure 4B -->
+  <div class="figure-card">
+    <h2 class="figure-title">Figure 4B: Wilcoxon Signed-Rank MAE Comparisons</h2>
+    <img src="fig 4b.png" alt="Figure 4B" class="figure-img">
+    <div class="interpretation-box">
+      <strong>Figure 4B Interpretation:</strong> Paired Mean Absolute Error (MAE) differences across 25 metros evaluated using Wilcoxon signed-rank tests across four post-COVID seasons. Negative values indicate superior precision in M2.
+    </div>
+  </div>
+
+  <!-- Figure 4C -->
+  <div class="figure-card">
+    <h2 class="figure-title">Figure 4C: Weighted Interval Score (WIS) Retrospective Forecasting</h2>
+    <img src="fig 4c.png" alt="Figure 4C" class="figure-img">
+    <div class="interpretation-box">
+      <strong>Figure 4C Interpretation:</strong> Weighted Interval Score (WIS) computed over the 2025–26 held-out forecasting window (MMWR weeks 21–34) displayed on a log scale. Lower scores indicate more precise forecasts. Green segments highlight metros where M2 outperformed M1 (18/25).
+    </div>
+  </div>
+
+</body>
+</html>
