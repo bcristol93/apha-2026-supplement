@@ -1,350 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Updated Analysis Figures — APHA 2026 Supplement</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <style>
-    :root {
-      --primary: #1e3a8a;
-      --primary-light: #3b82f6;
-      --bg-slate: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --border-color: #e2e8f0;
-    }
+<!-- Figure 1 -->
+<div class="figure-card">
+  <h2 class="figure-title">Figure 1: Study design and geographic scope</h2>
+  <img src="fig 1.png" alt="Figure 1: Study design and geographic scope" class="figure-img">
+</div>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-slate);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
-
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-      color: white;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(4px);
-      padding: 0.35rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-      font-weight: 300;
-    }
-
-    .author-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      font-size: 0.95rem;
-    }
-
-    .author-name {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .author-affil {
-      opacity: 0.85;
-      font-size: 0.88rem;
-    }
-
-    .author-email {
-      margin-top: 0.5rem;
-      display: inline-block;
-      color: #93c5fd;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1rem;
-    }
-
-    .notice-banner {
-      background-color: #eff6ff;
-      border-left: 4px solid var(--primary-light);
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      font-size: 0.92rem;
-      color: #1e40af;
-    }
-
-    .figure-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2.5rem;
-      overflow: hidden;
-    }
-
-    .figure-header {
-      padding: 1.2rem 1.5rem;
-      border-bottom: 1px solid var(--border-color);
-      background-color: #ffffff;
-    }
-
-    .figure-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .img-container {
-      background-color: #ffffff;
-      padding: 1rem;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .img-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
-      transition: transform 0.2s ease;
-    }
-
-    .img-container img:hover {
-      transform: scale(1.01);
-    }
-
-    .caption-box {
-      padding: 1.25rem 1.5rem;
-      background-color: #f8fafc;
-      border-top: 1px solid var(--border-color);
-      font-size: 0.93rem;
-      color: var(--text-muted);
-    }
-
-    .caption-box strong {
-      color: var(--text-main);
-    }
-
-    .qr-section {
-      background: white;
-      border: 2px dashed var(--primary-light);
-      border-radius: 16px;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    #qrcode {
-      display: flex;
-      justify-content: center;
-      margin: 1.5rem 0;
-    }
-
-    .print-btn {
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 0.95rem;
-      margin-top: 1rem;
-    }
-
-    .print-btn:hover {
-      background-color: #1d4ed8;
-    }
-
-    /* Modal Lightbox */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.85);
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-
-    .modal img {
-      max-width: 95%;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      color: white;
-      font-size: 35px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    @media print {
-      body * {
-        visibility: hidden;
-      }
-      .qr-section, .qr-section * {
-        visibility: visible;
-      }
-      .qr-section {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        border: none;
-      }
-      .print-btn {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="badge">APHA 2026 Poster Web Supplement</div>
-    <h1>Updated Analysis Figures</h1>
-    <div class="subtitle">M1 vs. M2 Model Performance Across 25 Metros</div>
-
-    <div class="author-card">
-      <div class="author-name">Benjamin A. Cristol</div>
-      <div class="author-affil">UTHealth Houston School of Public Health</div>
-      <a href="mailto:benjamin.a.cristol@uth.tmc.edu" class="author-email">benjamin.a.cristol@uth.tmc.edu</a>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="notice-banner">
-      📌 <strong>Poster Note:</strong> This webpage contains updated high-resolution figures and revised model comparative analysis (M1 vs. M2) supplementing the physical poster presented at APHA 2026.
-    </div>
-
-    <!-- Figure 3A -->
-    <div class="figure-card">
-      <div class="figure-header">
-        <span class="figure-title">Figure 3A: Peak Rₜ Disparity by Metro-Season (M1 vs. M2)</span>
-      </div>
-      <div class="img-container" onclick="openModal('fig 3a.png')">
-        <img src="fig 3a.png" alt="Figure 3A - Peak Rt by metro-season" />
-      </div>
-      <div class="caption-box">
-        <strong>Figure 3A Interpretation:</strong> Each row presents a solid left bar (M1) and shaded right bar (M2) representing peak Rₜ for a metro-season. Metros are separated according to spatial network archetype (Type I–III) and ordered within categories from largest to smallest peak Rₜ disparity (M1 − M2), indicating greater spatial redistribution in M2. An asterisk (*) denotes metro-season outliers in which M2 &gt; M1 (12/100).
-      </div>
-    </div>
-
-    <!-- Figure 3B -->
-    <div class="figure-card">
-      <div class="figure-header">
-        <span class="figure-title">Figure 3B: Mean Absolute Error Across Epidemic Features</span>
-      </div>
-      <div class="img-container" onclick="openModal('fig 3b.png')">
-        <img src="fig 3b.png" alt="Figure 3B - Violin plots of MAE" />
-      </div>
-      <div class="caption-box">
-        <strong>Figure 3B Interpretation:</strong> Violin plots show the distribution of mean absolute error (MAE) of M1 vs. M2 across 4 epidemic features: <em>duration, onset week, peak week,</em> and <em>peak intensity</em>. Each violin plot contains 100 uniquely colored points (metro-seasons) dispersed relative to feature medians. Paired errors (M1 vs. M2) compared via Wilcoxon signed-rank test showed duration, peak week, and peak intensity were statistically significant (p &lt; 0.005), with M2 showing lower MAE for duration while M1 performed significantly better on peak week and peak intensity.
-      </div>
-    </div>
-
-    <!-- Figure 3C -->
-    <div class="figure-card">
-      <div class="figure-header">
-        <span class="figure-title">Figure 3C: WIS Retrospective Forecasting Performance</span>
-      </div>
-      <div class="img-container" onclick="openModal('fig 3c.png')">
-        <img src="fig 3c.png" alt="Figure 3C - WIS retrospective forecasting" />
-      </div>
-      <div class="caption-box">
-        <strong>Figure 3C Interpretation:</strong> Weighted Interval Score (WIS) computed over the 2025–26 held-out forecasting window (MMWR weeks 21–34) and displayed on a log scale. Lower scores indicate more precise forecasts. Each row connects M1 (filled) and M2 (open) points, with green segments indicating metros where M2 outperformed M1 (18/25) and red segments for the inverse. <em>Note: NYC, Maricopa (Phoenix), and St. Louis were obtained from ESSENCE/EpiQuery with shorter held-out windows.</em>
-      </div>
-    </div>
-
-    <!-- Printable QR Attachment Section -->
-    <div class="qr-section" id="print-area">
-      <h3>Poster QR Code Attachment</h3>
-      <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.25rem;">
-        Scan to view updated analyses & figures for APHA 2026
-      </p>
-      
-      <div id="qrcode"></div>
-      
-      <p><strong>Benjamin A. Cristol</strong> — UTHealth Houston School of Public Health</p>
-      <p style="font-size: 0.85rem; color: #475569;">Contact: benjamin.a.cristol@uth.tmc.edu</p>
-
-      <button class="print-btn" onclick="window.print()">Print QR Code Cutout</button>
-    </div>
+<!-- Figure 3 Composite -->
+<div class="figure-card">
+  <h2 class="figure-title">Figure 3</h2>
+  <img src="fig 3.png" alt="Figure 3: Spatial mobility network archetypes and Rt trajectories" class="figure-img">
+  <div class="interpretation-box">
+    <strong>Figure 3 Interpretation:</strong><br>
+    <strong>(3A) Spatial Mobility Network Archetypes:</strong> Conceptual taxonomy categorizing metropolitan mobility structures into three archetypes: <em>Type I (Transit-Radial Multi-Hub)</em>, where transit-corridor mixing creates cross-CBG exposure uncaptured by M1; <em>Type II (Hub-and-Spoke Mixed Density)</em>, where core mixing and suburban return flows drive asymmetric exposure modeled explicitly by M2; and <em>Type III (Car-Dependent Dispersed)</em>, where uniform vehicle flows cause M2's spatial force-of-infection to collapse toward M1's homogeneous mixing assumption.<br><br>
+    <strong>(3B) Weekly $R_t$ Trajectories Across Archetypes (2022–2026):</strong> Comparison of weekly reproduction numbers ($R_t$) between M1 (solid) and M2 (dashed) with 95% ensemble credible bands across four post-COVID seasons in four geographically diverse metros (Chicago, Las Vegas, Nashville, Lubbock). Model divergence peaks in transit-heavy (Type I) and centralized commuter (Type II) networks, but converges in dispersed car-dependent systems (Type III).
   </div>
+</div>
 
-  <!-- Modal Lightbox -->
-  <div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close-modal">&times;</span>
-    <img id="modalImg" src="" alt="Enlarged figure view" />
+<!-- Figure 4A -->
+<div class="figure-card">
+  <h2 class="figure-title">Figure 4A: Peak $R_t$ Disparity by Spatial Network Archetypes</h2>
+  <img src="fig 4a.png" alt="Figure 4A" class="figure-img">
+  <div class="interpretation-box">
+    <strong>Figure 4A Interpretation:</strong> Peak transmission disparity ($\Delta R_t$) between mobility-informed (M2) and unadjusted (M1) models across 25 US metropolitan statistical areas. Spatial network archetypes demonstrate significant variation in divergence.
   </div>
+</div>
 
-  <script>
-    // Generate QR code dynamically for current page URL
-    window.addEventListener('DOMContentLoaded', () => {
-      new QRCode(document.getElementById("qrcode"), {
-        text: window.location.href,
-        width: 160,
-        height: 160,
-        colorDark : "#0f172a",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-      });
-    });
+<!-- Figure 4B -->
+<div class="figure-card">
+  <h2 class="figure-title">Figure 4B: Wilcoxon Signed-Rank MAE Comparisons</h2>
+  <img src="fig 4b.png" alt="Figure 4B" class="figure-img">
+  <div class="interpretation-box">
+    <strong>Figure 4B Interpretation:</strong> Paired Mean Absolute Error (MAE) differences across 25 metros evaluated using Wilcoxon signed-rank tests across four post-COVID seasons. Negative values indicate superior precision in M2.
+  </div>
+</div>
 
-    fn openModal(src) {
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImg');
-      modal.style.display = 'flex';
-      modalImg.src = src;
-    }
-
-    function closeModal() {
-      document.getElementById('imageModal').style.display = 'none';
-    }
-  </script>
-</body>
-</html>
+<!-- Figure 4C -->
+<div class="figure-card">
+  <h2 class="figure-title">Figure 4C: Weighted Interval Score (WIS) Retrospective Forecasting</h2>
+  <img src="fig 4c.png" alt="Figure 4C" class="figure-img">
+  <div class="interpretation-box">
+    <strong>Figure 4C Interpretation:</strong> Weighted Interval Score (WIS) computed over the 2025–26 held-out forecasting window (MMWR weeks 21–34) displayed on a log scale. Lower scores indicate more precise forecasts. Green segments highlight metros where M2 outperformed M1 (18/25).
+  </div>
+</div>
